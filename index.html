@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>DB: New Era - Reward Calc</title>
+    </head>
+
+    <body>
+        <div class="container">
+          <div class="row">
+            <div class="col s3"></div>
+            <div class="col s6 center-align">
+              <div class="card grey lighten-3 medium">
+                <span class="card-title">Reward Calc</span>
+                <div class="card-tabs">
+                    <ul class="tabs tabs-fixed-width grey lighten-3">
+                      <li class="tab"><a href="#adv" class="active">Adventure</a></li>
+                      <li class="tab"><a href="#spr">Spar</a></li>
+                      <li class="tab"><a href="#evt">Event</a></li>
+                      <li class="tab"><a href="#btl">Battle</a></li>
+                    </ul>
+                   </div>
+                 <div class="card-content">
+                   <div id="adv" style="height: 250px;">
+                     <h6 id="adv-reward" class="flow-text center-align" style="margin-bottom: 25px;"></h6>
+                    <div class="input-field" style="width: 50%; margin: 0 auto;">
+                      <input type="text" id="adv-wc">
+                      <label for="adv-wc">Word Count</label>
+                    </div>
+                    <ul>
+                        <li>
+                            <label>
+                                <input type="checkbox" id="adv-solo" class="check">
+                                <span>Solo</span>
+                            </label>
+                          </li>
+                      <li>
+                        <label>
+                            <input type="checkbox" id="adv-kai" class="check">
+                            <span>Kai Weights</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input type="checkbox" id="adv-clothing" class="check">
+                          <span>Weighted Clothing</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input type="checkbox" id="adv-freight" class="check">
+                          <span>Freighter</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input type="checkbox" id="adv-boost" class="check">
+                          <span>Boost Token</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input type="checkbox" id="adv-adv" class="check">
+                          <span>Adventure Token</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                   </div>
+                   <div id="spr" style="height: 250px;">
+                      <h6 id="spr-reward" class="flow-text center-align" style="margin-bottom: 25px;"></h6>
+                      <div class="input-field" style="width: 20%; margin: 0 auto;">
+                        <input type="text" id="spr-posts">
+                        <label for="spr-posts">Post Count</label>
+                      </div>
+                      <ul>
+                        <li>
+                          <label>
+                              <input type="checkbox" id="spr-kai" class="check">
+                              <span>Kai Weights</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="checkbox" id="spr-clothing" class="check">
+                            <span>Weighted Clothing</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="checkbox" id="spr-arena" class="check">
+                            <span>Arena</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="checkbox" id="spr-team" class="check">
+                            <span>Teammates</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="checkbox" id="spr-boost" class="check">
+                            <span>Boost Token</span>
+                          </label>
+                        </li>
+                      </ul>
+                   </div>
+                   <div id="evt" style="height: 250px;">
+                      <h6 id="evt-reward" class="flow-text center-align" style="margin-bottom: 25px;""></h6>
+                      <div class="input-field" style="width: 20%; margin: 0 auto;">
+                        <input type="text" id="evt-posts">
+                        <label for="evt-posts">Post Count</label>
+                      </div>
+                      <ul>
+                          <li>
+                              <label>
+                                <input type="checkbox" id="evt-deadly" class="check">
+                                <span>Deadly Event</span>
+                              </label>
+                            </li>
+                        <li>
+                          <label>
+                              <input type="checkbox" id="evt-kai" class="check">
+                              <span>Kai Weights</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="checkbox" id="evt-clothing" class="check">
+                            <span>Weighted Clothing</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="checkbox" id="evt-adv" class="check">
+                            <span>Adventure Token</span>
+                          </label>
+                        </li>
+                      </ul>
+                   </div>
+                   <div id="btl" style="height: 250px;">
+                      <h6 id="btl-reward" class="flow-text center-align" style="margin-bottom: 25px;""></h6>
+                      <div class="input-field" style="width: 20%; margin: 0 auto;">
+                        <input type="text" id="btl-posts">
+                        <label for="btl-posts">Post Count</label>
+                      </div>
+                      <ul>
+                          <li>
+                              <label>
+                                <input type="checkbox" id="btl-winner" class="check">
+                                <span>Winner</span>
+                              </label>
+                            </li>
+                        <li>
+                          <label>
+                              <input type="checkbox" id="btl-kai" class="check">
+                              <span>Kai Weights</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="checkbox" id="btl-clothing" class="check">
+                            <span>Weighted Clothing</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="checkbox" id="btl-adv" class="check">
+                            <span>Adventure Token</span>
+                          </label>
+                        </li>
+                      </ul>
+                   </div>
+                 </div>
+              </div>
+              <div class="col s3"></div>
+            </div>
+          </div>
+
+        </div>
+
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+    <script>
+      M.AutoInit();
+
+      const calculateAdventureReward = () => {
+        let plReward = 0;
+        let mpReward = 0
+        let zeniReward = 0;
+        let words = document.getElementById('adv-wc');
+
+        const calculatePL = () => {
+          let posts = Math.round(words.value / 200);
+          let perPost = 100;
+          let reward;
+          if (document.getElementById('adv-solo').checked) {perPost = 50};
+          if (document.getElementById('adv-kai').checked) {perPost += 25};
+          reward = posts * perPost;
+          if (document.getElementById('adv-clothing').checked) {reward *= 1.5};
+          if (document.getElementById('adv-boost').checked) {reward *= 1.5};
+          return plReward = Math.round(reward).toLocaleString();
+        }
+        const calculateMP = () => {
+          let mp = Math.floor(words.value / 1000);
+          if (!document.getElementById('adv-solo').checked) {
+          mp *= 2;
+          return mpReward = mp.toLocaleString();
+          }
+          if (mp > 5) {
+            mp = 5;
+          }
+          return mpReward = mp.toLocaleString();
+        }
+        const calculateZeni = () => {
+          let posts = Math.round(words.value / 200);
+          let zeni;
+          if (!document.getElementById('adv-solo').checked) {
+            zeni = posts * 800;
+          }
+          else {
+            zeni = posts * 400;
+          }
+          if (document.getElementById('adv-freight').checked) {zeni *= 1.1};
+          if (document.getElementById('adv-adv').checked) {zeni *= 1.5};
+          return zeniReward = zeni.toLocaleString(); 
+        }
+        const listenForChanges = () => {
+          document.getElementById('adv-wc').addEventListener('keyup', event => {
+            calculatePL();
+            calculateMP();
+            calculateZeni();
+            updateReward();
+          })
+          document.querySelectorAll('.check').forEach(check => check.addEventListener('click', event => {
+            calculatePL();
+            calculateMP();
+            calculateZeni();
+            updateReward()
+          }
+          ))
+        }
+        const updateReward = () => {
+          return document.getElementById('adv-reward').innerHTML = `+${plReward} PL, +${mpReward} MP, and +${zeniReward} zeni`;
+        }
+        listenForChanges();
+      }
+      
+      const calculateSparReward = () => {
+        let plReward = 0;
+        let mpReward = 0
+        let posts = document.getElementById('spr-posts');
+        
+        const calculatePL = () => {
+          let perPost = 100;
+          let reward;
+          if (document.getElementById('spr-kai').checked) {perPost += 25};
+          reward = perPost * posts.value;
+          if (document.getElementById('spr-clothing').checked) {reward *= 1.5};
+          reward += 1000;
+          if (document.getElementById('spr-arena').checked) {reward += 250};
+          if (document.getElementById('spr-team').checked) {reward += 250};
+          if (document.getElementById('spr-boost').checked) {reward *= 1.5};
+          return plReward = Math.round(reward).toLocaleString();
+        }
+        const calculateMP = () => {
+          let mp = Math.floor((posts.value / 5) + 3);
+          return mpReward = mp.toLocaleString();
+        }
+        const listenForChanges = () => {
+          document.getElementById('spr-posts').addEventListener('keyup', event => {
+            calculatePL();
+            calculateMP();
+            updateReward();
+          })
+          document.querySelectorAll('.check').forEach(check => check.addEventListener('click', event => {
+            calculatePL();
+            calculateMP();
+            updateReward()
+          }
+          ))
+        }
+        const updateReward = () => {
+        return document.getElementById('spr-reward').innerHTML = `+${plReward} PL and +${mpReward} MP`;
+        }
+        listenForChanges();
+      }
+      const calculateEventReward = () => {
+        let plReward = 0;
+        let mpReward = 0
+        let zeniReward = 0;
+        let posts = document.getElementById('evt-posts');
+        
+        const calculatePL = () => {
+          let perPost = 200;
+          let reward;
+          if (document.getElementById('evt-kai').checked) {perPost += 25};
+          reward = perPost * posts.value;
+          if (document.getElementById('evt-clothing').checked) {reward *= 1.5};
+          reward += 4000;
+          if (document.getElementById('evt-deadly').checked) {reward += 2000};
+          return plReward = Math.round(reward).toLocaleString();
+        }
+        const calculateMP = () => {
+          let mp = Math.floor((posts.value / 5) + 4);
+          if (document.getElementById('evt-deadly').checked) {mp += 2};
+          return mpReward = mp.toLocaleString();
+        }
+        const calculateZeni = () => {
+          let zeni = (posts.value * 1000) + 4000;
+          if (document.getElementById('evt-deadly').checked) {zeni += 2000};
+          if (document.getElementById('evt-adv').checked) {zeni *= 1.5};
+          return zeniReward = zeni.toLocaleString(); 
+        }
+        const listenForChanges = () => {
+          document.getElementById('evt-posts').addEventListener('keyup', event => {
+            calculatePL();
+            calculateMP();
+            calculateZeni();
+            updateReward();
+          })
+          document.querySelectorAll('.check').forEach(check => check.addEventListener('click', event => {
+            calculatePL();
+            calculateMP();
+            calculateZeni();
+            updateReward()
+          }
+          ))
+        }
+        const updateReward = () => {
+        return document.getElementById('evt-reward').innerHTML = `+${plReward} PL, +${mpReward} MP, and +${zeniReward} zeni`;
+        }
+        listenForChanges();
+      }
+      const calculateBattleReward = () => {
+        let plReward = 0;
+        let mpReward = 0
+        let zeniReward = 0;
+        let posts = document.getElementById('btl-posts');
+        
+        const calculatePL = () => {
+          let perPost = 200;
+          let reward;
+          if (document.getElementById('btl-kai').checked) {perPost += 25};
+          reward = perPost * posts.value;
+          if (document.getElementById('btl-clothing').checked) {reward *= 1.5};
+          if (document.getElementById('btl-winner').checked) {reward += 3000}
+          else (reward += 5000);
+          return plReward = Math.round(reward).toLocaleString();
+        }
+        const calculateMP = () => {
+          let mp = Math.floor((posts.value / 5) + 4);
+          if (document.getElementById('btl-winner').checked) {mp += 5}
+          else (mp += 3);
+          return mpReward = mp.toLocaleString();
+        }
+        const calculateZeni = () => {
+          let zeni = posts.value * 600;
+          if (document.getElementById('btl-winner').checked) {zeni += 5000};
+          if (document.getElementById('btl-adv').checked) {zeni *= 1.5};
+          return zeniReward = zeni.toLocaleString(); 
+        }
+        const listenForChanges = () => {
+          document.getElementById('btl-posts').addEventListener('keyup', event => {
+            calculatePL();
+            calculateMP();
+            calculateZeni();
+            updateReward();
+          })
+          document.querySelectorAll('.check').forEach(check => check.addEventListener('click', event => {
+            calculatePL();
+            calculateMP();
+            calculateZeni();
+            updateReward()
+          }
+          ))
+        }
+        const updateReward = () => {
+        return document.getElementById('btl-reward').innerHTML = `+${plReward} PL, +${mpReward} MP, and +${zeniReward} zeni`;
+        }
+        listenForChanges();
+      }
+
+
+      
+      calculateAdventureReward();
+      calculateSparReward();
+      calculateEventReward();
+      calculateBattleReward();
+
+    </script>
+  </html>
+        
