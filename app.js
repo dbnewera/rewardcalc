@@ -65,6 +65,9 @@ const removeCommas = number => {
       ))
     }
     const updateReward = () => {
+      if (!document.getElementById('adv-wc').value) {
+        return '+0 PL, +0 MP, and +0 zeni';
+      }
       return document.getElementById('adv-reward').innerHTML = `+${plReward} PL, +${mpReward} MP, and +${zeniReward} zeni`;
     }
     listenForChanges();
@@ -81,14 +84,19 @@ const removeCommas = number => {
       if (document.getElementById('spr-kai').checked) {perPost += 25};
       reward = perPost * posts.value;
       if (document.getElementById('spr-clothing').checked) {reward *= 1.5};
+      if (!document.getElementById('spr-inc').checked) {
       reward += 1000;
       if (document.getElementById('spr-arena').checked) {reward += 250};
       if (document.getElementById('spr-team').checked) {reward += 250};
       if (document.getElementById('spr-boost').checked) {reward *= 1.5};
+      }
       return plReward = Math.round(reward).toLocaleString();
     }
     const calculateMP = () => {
       let mp = Math.floor((posts.value / 5) + 3);
+      if (document.getElementById('spr-inc').checked) {
+       mp -= 3; 
+      }
       return mpReward = mp.toLocaleString();
     }
     const listenForChanges = () => {
