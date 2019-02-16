@@ -38,6 +38,7 @@
   const holes = document.querySelectorAll('.hole');
   const scoreBoard = document.querySelector('.score');
   const moles = document.querySelectorAll('.mole');
+  let gameRunning = false;
   let lastHole;
   let timeUp = false;
   let score = 0;
@@ -67,13 +68,19 @@
   }
 
   function startGame() {
+    if (gameRunning === true) {
+      alert('You started a game already!')
+    } else {
     scoreBoard.textContent = 0;
+    gameRunning = true;
     timeUp = false;
     score = 0;
     peep();
     setTimeout(() => {
       timeUp = true;
+      gameRunning = false;
     }, 10000)
+    }
   }
 
   function bonk(e) {
